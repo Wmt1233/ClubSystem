@@ -3,7 +3,7 @@ import { ElMessage } from 'element-plus'
 
 const request = axios.create({
     // 注意：这里必须对应你 Spring Boot 的端口
-    baseURL: 'http://localhost:8080/api', 
+    baseURL: '/api', 
     timeout: 5000
 })
 

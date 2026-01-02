@@ -53,13 +53,15 @@ public class SecurityConfig {
     @Bean
     public UrlBasedCorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true); // 允许发送 Cookie (虽然我们用 Header)
+        config.setAllowCredentials(true);
 
-        // 允许的前端地址 (你的 Vue 项目地址)
-        config.addAllowedOrigin("http://localhost:5173");
+        // 【删除旧的】 config.addAllowedOrigin("http://localhost:5173");
 
-        config.addAllowedHeader("*"); // 允许所有头
-        config.addAllowedMethod("*"); // 允许所有方法 (GET, POST, PUT, DELETE)
+        // 【新增这行】 允许所有来源模式 (解决 127.0.0.1 vs localhost 以及端口不同的问题)
+        config.addAllowedOriginPattern("*");
+
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("*");
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
