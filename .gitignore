@@ -1,0 +1,25 @@
+# --- 后端 (Spring Boot) 忽略项 ---
+backend/target/
+backend/mvnw
+backend/mvnw.cmd
+backend/.mvn/
+backend/*.iml
+backend/.idea/
+backend/.vscode/
+# 忽略 H2 数据库文件（包含你的本地数据）
+backend/data/ 
+backend/*.log
+
+# --- 前端 (Vue) 忽略项 ---
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.idea/
+frontend/.vscode/
+frontend/*.local
+
+# --- 系统文件 ---
+.DS_Store
+Thumbs.db
